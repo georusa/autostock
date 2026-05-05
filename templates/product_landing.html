@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head><meta charset="utf-8"><title>AutoStock - AI 量化分析工具</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: -apple-system, 'PingFang SC', 'Microsoft YaHei', sans-serif; background: #0f0f23; color: #e0e0e0; }
+.hero { background: linear-gradient(135deg, #0f0f23 0%, #1a1a3e 50%, #0d0d1a 100%); padding: 80px 20px; text-align: center; border-bottom: 1px solid #333; }
+.hero h1 { font-size: 48px; background: linear-gradient(90deg, #00d2ff, #3a7bd5, #00d2ff); background-size: 200% auto; -webkit-background-clip: text; -webkit-text-fill-color: transparent; animation: shimmer 3s linear infinite; }
+@keyframes shimmer { 0% { background-position: 0% center; } 100% { background-position: 200% center; } }
+.hero p { font-size: 18px; color: #888; margin-top: 16px; }
+.hero .btn { display: inline-block; padding: 14px 36px; margin-top: 24px; background: linear-gradient(135deg, #667eea, #764ba2); color: white; text-decoration: none; border-radius: 8px; font-weight: 600; font-size: 16px; transition: transform .2s; }
+.hero .btn:hover { transform: translateY(-2px); }
+.container { max-width: 900px; margin: 0 auto; padding: 40px 20px; }
+.features { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 24px; margin: 40px 0; }
+.feature { background: #1a1a3e; border-radius: 12px; padding: 24px; border: 1px solid #2a2a5e; }
+.feature h3 { color: #667eea; margin-bottom: 8px; font-size: 16px; }
+.feature p { color: #999; font-size: 14px; }
+.screenshot { margin: 40px 0; border-radius: 12px; overflow: hidden; border: 1px solid #2a2a5e; }
+.screenshot img { width: 100%; display: block; }
+.screenshot-desc { padding: 12px; text-align: center; color: #888; font-size: 13px; background: #1a1a3e; }
+.usage { background: #1a1a3e; border-radius: 12px; padding: 24px; margin: 40px 0; border: 1px solid #2a2a5e; }
+.usage h2 { color: #667eea; margin-bottom: 16px; font-size: 18px; }
+.usage code { display: block; background: #0f0f23; padding: 16px; border-radius: 8px; margin: 8px 0; font-size: 14px; color: #00d2ff; }
+.pricing-table { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px; margin: 40px 0; }
+.pricing-card { background: #1a1a3e; border-radius: 12px; padding: 24px; text-align: center; border: 1px solid #2a2a5e; }
+.pricing-card.featured { border-color: #667eea; }
+.pricing-card h3 { color: #e0e0e0; font-size: 16px; }
+.pricing-card .price { font-size: 36px; color: #00d2ff; font-weight: bold; margin: 12px 0; }
+.pricing-card .price span { font-size: 14px; color: #888; }
+.pricing-card ul { list-style: none; padding: 0; }
+.pricing-card li { padding: 6px 0; color: #999; font-size: 13px; }
+.pricing-card .btn { display: inline-block; padding: 10px 24px; margin-top: 16px; background: #667eea; border-radius: 6px; color: white; text-decoration: none; font-size: 14px; }
+.footer { text-align: center; padding: 40px 20px; border-top: 1px solid #1a1a3e; color: #555; font-size: 13px; }
+.footer a { color: #667eea; text-decoration: none; }
+</style></head>
+<body>
+<div class="hero">
+  <h1>📊 AutoStock</h1>
+  <p>一键生成 A 股专业技术分析报告 · 开源免费 · AI 驱动</p>
+  <a class="btn" href="https://paypal.me/netmstar">☕ 支持项目 · PayPal 打赏</a>
+</div>
+<div class="container">
+  <h2 style="color:#667eea;font-size:20px;margin-bottom:16px;">🚀 功能介绍</h2>
+  <div class="features">
+    <div class="feature"><h3>📈 自动数据采集</h3><p>从东方财富公开 API 获取任意 A 股日线数据，支持 200+ 交易日</p></div>
+    <div class="feature"><h3>📊 技术指标计算</h3><p>MA5/10/20/60 均线 · RSI 相对强弱 · MACD 金叉死叉</p></div>
+    <div class="feature"><h3>📄 专业报告生成</h3><p>自动产出带图表的完整 HTML 分析报告，可直接打印/分享</p></div>
+    <div class="feature"><h3>⚡ 一键使用</h3><p>安装即用，无需配置。支持批量分析和自定义股票池</p></div>
+    <div class="feature"><h3>🔔 信号提醒</h3><p>自动识别 MACD 金叉死叉、RSI 超买超卖信号</p></div>
+    <div class="feature"><h3>💻 跨平台</h3><p>纯 Python 实现，Mac/Linux/Windows 均可运行</p></div>
+  </div>
+
+  <h2 style="color:#667eea;font-size:20px;margin-bottom:16px;">📸 效果展示</h2>
+  <div class="screenshot">
+    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='800' height='500'%3E%3Crect width='800' height='500' fill='%231a1a3e'/%3E%3Ctext x='400' y='250' text-anchor='middle' fill='%23667eea' font-size='20' font-family='sans-serif'%3E报告截图（涵盖K线、MACD、RSI图表）%3C/text%3E%3C/svg%3E" alt="示例报告截图" />
+    <div class="screenshot-desc">贵州茅台技术分析报告 · 包含价格走势、趋势指标、成交量分析</div>
+  </div>
+
+  <h2 style="color:#667eea;font-size:20px;margin-bottom:16px;">💻 快速开始</h2>
+  <div class="usage">
+    <h2>1. 安装依赖</h2>
+    <code>pip install pandas numpy matplotlib httpx</code>
+    <h2>2. 下载脚本</h2>
+    <code>wget https://github.com/autostock/autostock/releases/latest/download/autostock.py</code>
+    <h2>3. 运行分析</h2>
+    <code>python3 autostock.py 600519 000858 300750</code>
+    <h2>4. 查看报告</h2>
+    <code># 报告自动生成在 output/ 目录下，用浏览器打开即可</code>
+  </div>
+
+  <h2 style="color:#667eea;font-size:20px;margin-bottom:16px;">💎 版本对比</h2>
+  <div class="pricing-table">
+    <div class="pricing-card">
+      <h3>开源版</h3>
+      <div class="price">🆓<span> 免费</span></div>
+      <ul>
+        <li>✅ 基础指标计算</li>
+        <li>✅ 批量分析</li>
+        <li>✅ HTML 报告生成</li>
+        <li>❌ 自定义均线</li>
+        <li>❌ 资金流向</li>
+        <li>❌ 行业对比</li>
+      </ul>
+      <a class="btn" href="https://paypal.me/netmstar">免费下载</a>
+    </div>
+    <div class="pricing-card featured">
+      <h3>💎 完整版</h3>
+      <div class="price">¥49.9<span> 一次付费</span></div>
+      <ul>
+        <li>✅ 所有开源版功能</li>
+        <li>✅ 自定义均线周期</li>
+        <li>✅ 资金流向分析</li>
+        <li>✅ 行业对比</li>
+        <li>✅ 自动交易信号</li>
+        <li>✅ 定期自动报告</li>
+        <li>✅ 永久更新 + 技术支援</li>
+      </ul>
+      <a class="btn" href="https://paypal.me/netmstar/49.9">购买完整版</a>
+    </div>
+    <div class="pricing-card">
+      <h3>🤝 定制开发</h3>
+      <div class="price">$100+<span> 起步</span></div>
+      <ul>
+        <li>🎯 根据需求定制</li>
+        <li>🎯 自动化脚本开发</li>
+        <li>🎯 量化工具定制</li>
+        <li>🎯 数据分析系统</li>
+        <li>💬 具体报价详谈</li>
+      </ul>
+      <a class="btn" href="https://paypal.me/netmstar/100">联系咨询</a>
+    </div>
+  </div>
+
+  <div class="footer">
+    <p>AutoStock by Claw · <a href="https://paypal.me/netmstar">☕ 支持项目</a></p>
+    <p style="margin-top:8px;">所有数据来源于公开接口，仅供学习参考，不构成投资建议</p>
+    <p style="margin-top:4px;">© 2026 AutoStock · Made with 🦞</p>
+  </div>
+</div>
+</body>
+</html>

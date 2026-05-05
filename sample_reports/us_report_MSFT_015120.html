@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MSFT Technical Analysis - USStockAnalyzer</title>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<style>
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif; background:#0a0a1a; color:#e0e0e0; padding:20px; }
+.container { max-width:900px; margin:0 auto; }
+.header { background:linear-gradient(135deg,#1a1a3e,#0d0d2b); border-radius:16px; padding:30px; margin-bottom:20px; border:1px solid #2a2a5a; }
+.header h1 { font-size:32px; color:#fff; }
+.header .subtitle { color:#888; font-size:14px; margin:8px 0 4px; }
+.header .price { font-size:48px; font-weight:700; color:#fff; }
+.header .change { font-size:18px; }
+.change.up { color:#00c853; } .change.down { color:#ff1744; }
+.grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:12px; margin:20px 0; }
+.card { background:#1a1a3e; border-radius:12px; padding:20px; border:1px solid #2a2a5a; }
+.card h3 { color:#888; font-size:12px; text-transform:uppercase; letter-spacing:1px; margin-bottom:8px; }
+.card .value { font-size:24px; font-weight:600; }
+.chart-container { background:#1a1a3e; border-radius:12px; padding:20px; border:1px solid #2a2a5a; margin:20px 0; }
+.signals { display:flex; gap:8px; flex-wrap:wrap; margin:12px 0; }
+.signal { padding:8px 16px; border-radius:20px; font-size:13px; font-weight:600; }
+.signal.up { background:#00c85322; color:#00c853; border:1px solid #00c85344; }
+.signal.down { background:#ff174422; color:#ff1744; border:1px solid #ff174444; }
+.signal.neutral { background:#ffa72622; color:#ffa726; border:1px solid #ffa72644; }
+.data-table { width:100%; border-collapse:collapse; margin:20px 0; font-size:13px; }
+.data-table th { background:#1a1a3e; padding:10px; text-align:left; color:#888; text-transform:uppercase; font-size:11px; }
+.data-table td { padding:10px; border-bottom:1px solid #1a1a3e; }
+.footer { text-align:center; padding:30px; color:#555; font-size:12px; }
+.buy-section { background:#1a1a3e; border-radius:12px; padding:20px; margin:20px 0; text-align:center; border:1px solid #4a6cf7; }
+.buy-btn { display:inline-block; padding:12px 30px; background:#4a6cf7; color:#fff; border-radius:8px; text-decoration:none; font-weight:600; margin:10px; }
+</style>
+</head>
+<body>
+<div class="container">
+
+<div class="header">
+    <div class="subtitle">Microsoft Corporation | 2026-05-05 01:51 UTC</div>
+    <h1>$MSFT</h1>
+    <div class="price change up">$414.89</div>
+    <div class="change up">+0.11%</div>
+    <div class="signals">
+        <span class="signal up">🚀 BULLISH</span>
+        <span class="signal up">RSI: 60.0</span>
+        <span class="signal down">🔴 Death Cross (SELL)</span>
+    </div>
+</div>
+
+<div class="grid">
+    <div class="card">
+        <h3>Open</h3>
+        <div class="value">$411.55</div>
+    </div>
+    <div class="card">
+        <h3>High</h3>
+        <div class="value" style="color:#00c853">$420.78</div>
+    </div>
+    <div class="card">
+        <h3>Low</h3>
+        <div class="value" style="color:#ff1744">$410.80</div>
+    </div>
+    <div class="card">
+        <h3>Volume</h3>
+        <div class="value">16,400,475</div>
+    </div>
+    <div class="card">
+        <h3>MA20</h3>
+        <div class="value">$407.67</div>
+    </div>
+    <div class="card">
+        <h3>MA50</h3>
+        <div class="value">$396.46</div>
+    </div>
+</div>
+
+<div class="chart-container">
+    <h3>Price Chart (30 Days)</h3>
+    <canvas id="priceChart" height="200"></canvas>
+</div>
+
+<div class="chart-container">
+    <h3>RSI (14)</h3>
+    <canvas id="rsiChart" height="100"></canvas>
+</div>
+
+<div class="buy-section">
+    <h2>📊 Want Automated Reports Like This?</h2>
+    <p>Get the full USStockAnalyzer tool with batch analysis, PDF export, and daily alerts.</p>
+    <a href="https://paypal.me/netmstar" class="buy-btn">💳 Buy Now - $19.99</a>
+    <p style="color:#888;font-size:13px;margin-top:8px;">PayPal: netmstar@gmail.com</p>
+</div>
+
+<div class="footer">
+    🦞 USStockAnalyzer by Claw | Data: Yahoo Finance<br>
+    For educational purposes only. Not financial advice.
+</div>
+</div>
+
+<script>
+new Chart(document.getElementById('priceChart'), {
+    type: 'line',
+    data: {
+        labels: ["03/23", "03/24", "03/25", "03/26", "03/27", "03/30", "03/31", "04/01", "04/02", "04/06", "04/07", "04/08", "04/09", "04/10", "04/13", "04/14", "04/15", "04/16", "04/17", "04/20", "04/21", "04/22", "04/23", "04/24", "04/27", "04/28", "04/29", "04/30", "05/01", "05/04"],
+        datasets: [{
+            label: 'Price',
+            data: [383.0, 372.74, 371.04, 365.97, 356.77, 358.96, 370.17, 369.37, 373.46, 372.88, 372.29, 374.33, 373.07, 370.87, 384.37, 393.11, 411.22, 420.26, 422.79, 418.07, 424.16, 432.92, 415.75, 424.62, 424.82, 429.25, 424.46, 407.78, 414.44, 414.89],
+            borderColor: '#4a6cf7',
+            fill: true,
+            backgroundColor: 'rgba(74,108,247,0.1)',
+            tension: 0.3
+        },{
+            label: 'MA20',
+            data: [398.69, 397.88, 396.4, 394.62, 392.82, 390.84, 389.15, 387.36, 385.5, 383.69, 381.84, 380.27, 378.67, 377.13, 376.57, 376.22, 376.81, 378.24, 379.93, 381.74, 383.79, 386.8, 389.04, 391.97, 395.37, 398.89, 401.6, 403.52, 405.57, 407.67],
+            borderColor: '#ffa726',
+            borderDash: [5,5],
+            fill: false,
+            tension: 0.3
+        }]
+    },
+    options: {
+        responsive: true,
+        plugins: { legend: { labels: { color: '#888' } } },
+        scales: { x: { ticks: { color: '#555' } }, y: { ticks: { color: '#555' } } }
+    }
+});
+
+new Chart(document.getElementById('rsiChart'), {
+    type: 'line',
+    data: {
+        labels: ["03/23", "03/24", "03/25", "03/26", "03/27", "03/30", "03/31", "04/01", "04/02", "04/06", "04/07", "04/08", "04/09", "04/10", "04/13", "04/14", "04/15", "04/16", "04/17", "04/20", "04/21", "04/22", "04/23", "04/24", "04/27", "04/28", "04/29", "04/30", "05/01", "05/04"],
+        datasets: [{
+            label: 'RSI',
+            data: [27.4, 20.7, 11.6, 10.9, 8.7, 12.4, 26.1, 26.9, 33.8, 29.0, 28.9, 35.1, 36.1, 39.5, 51.1, 66.1, 75.2, 82.5, 92.9, 87.2, 86.3, 88.6, 72.2, 75.0, 75.4, 76.0, 73.5, 64.9, 62.9, 60.0],
+            borderColor: '#a855f7',
+            fill: true,
+            backgroundColor: 'rgba(168,85,247,0.1)',
+            tension: 0.3
+        }]
+    },
+    options: {
+        responsive: true,
+        plugins: { legend: { labels: { color: '#888' } } },
+        scales: {
+            y: { min: 0, max: 100, ticks: { color: '#555' } }
+        }
+    }
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,8 @@
+{
+  "name": "autostock",
+  "version": "1.0.0",
+  "files": ["autostock.py", "data_harvest.py", "README.md", "start.sh"],
+  "paypal": "netmstar@gmail.com",
+  "alipay": "pkuzxx@gmail.com",
+  "price_full": "¥49.9"
+}

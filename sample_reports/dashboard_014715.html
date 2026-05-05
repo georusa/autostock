@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>A股实时仪表盘 - AutoStock</title>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<style>
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif; background:#0f0f1a; color:#e0e0e0; padding:20px; }
+.header { display:flex; justify-content:space-between; align-items:center; margin-bottom:20px; }
+.header h1 { font-size:24px; color:#fff; }
+.header .time { color:#888; font-size:14px; }
+.grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:16px; margin-bottom:20px; }
+.card { background:#1a1a2e; border-radius:12px; padding:20px; border:1px solid #2a2a4a; }
+.card h3 { font-size:14px; color:#888; margin-bottom:8px; }
+.price { font-size:32px; font-weight:700; margin:8px 0; }
+.price.up { color:#00c853; }
+.price.down { color:#ff1744; }
+.change { font-size:14px; }
+.change.up { color:#00c853; }
+.change.down { color:#ff1744; }
+.detail { display:grid; grid-template-columns:1fr 1fr; gap:8px; margin-top:12px; font-size:12px; color:#888; }
+.detail span { display:flex; justify-content:space-between; }
+.detail span b { color:#ccc; }
+.chart-card { background:#1a1a2e; border-radius:12px; padding:20px; border:1px solid #2a2a4a; margin-bottom:20px; }
+.actions { display:flex; gap:10px; margin-top:20px; }
+.btn { padding:10px 20px; border-radius:8px; border:none; cursor:pointer; font-size:14px; }
+.btn-primary { background:#4a6cf7; color:#fff; }
+.btn-secondary { background:#2a2a4a; color:#888; }
+.footer { text-align:center; margin-top:30px; padding:20px; color:#555; font-size:12px; }
+</style>
+</head>
+<body>
+
+<div class="header">
+    <h1>📊 A股实时仪表盘</h1>
+    <div class="time">更新: 2026-05-05 01:47</div>
+</div>
+
+<div class="grid">
+
+    <div class="card">
+        <h3>600519</h3>
+        <div class="price down">¥1384.79</div>
+        <div class="change down">-1.17%</div>
+        <div class="detail">
+            <span>开盘 <b>¥1400.00</b></span>
+            <span>最高 <b>¥1401.17</b></span>
+            <span>最低 <b>¥1380.00</b></span>
+            <span>成交量 <b>52,753</b></span>
+        </div>
+    </div>
+
+    <div class="card">
+        <h3>000858</h3>
+        <div class="price down">¥97.08</div>
+        <div class="change down">-1.28%</div>
+        <div class="detail">
+            <span>开盘 <b>¥97.74</b></span>
+            <span>最高 <b>¥97.95</b></span>
+            <span>最低 <b>¥97.00</b></span>
+            <span>成交量 <b>248,209</b></span>
+        </div>
+    </div>
+
+    <div class="card">
+        <h3>300750</h3>
+        <div class="price down">¥436.00</div>
+        <div class="change down">-2.02%</div>
+        <div class="detail">
+            <span>开盘 <b>¥446.50</b></span>
+            <span>最高 <b>¥449.50</b></span>
+            <span>最低 <b>¥436.00</b></span>
+            <span>成交量 <b>298,121</b></span>
+        </div>
+    </div>
+
+    <div class="card">
+        <h3>601318</h3>
+        <div class="price down">¥59.37</div>
+        <div class="change down">-0.10%</div>
+        <div class="detail">
+            <span>开盘 <b>¥59.12</b></span>
+            <span>最高 <b>¥60.60</b></span>
+            <span>最低 <b>¥59.12</b></span>
+            <span>成交量 <b>1,063,010</b></span>
+        </div>
+    </div>
+
+    <div class="card">
+        <h3>000333</h3>
+        <div class="price down">¥81.10</div>
+        <div class="change down">-0.26%</div>
+        <div class="detail">
+            <span>开盘 <b>¥81.00</b></span>
+            <span>最高 <b>¥82.15</b></span>
+            <span>最低 <b>¥80.61</b></span>
+            <span>成交量 <b>354,433</b></span>
+        </div>
+    </div>
+
+    <div class="card">
+        <h3>002594</h3>
+        <div class="price down">¥102.98</div>
+        <div class="change down">-2.30%</div>
+        <div class="detail">
+            <span>开盘 <b>¥104.54</b></span>
+            <span>最高 <b>¥105.45</b></span>
+            <span>最低 <b>¥102.37</b></span>
+            <span>成交量 <b>600,979</b></span>
+        </div>
+    </div>
+
+</div>
+
+<div class="actions">
+    <button class="btn btn-primary" onclick="location.reload()">🔄 刷新</button>
+</div>
+
+<div class="footer">
+    🦞 AutoStock by Claw — 数据来源：东方财富 | 仅供学习参考<br>
+    购买完整版工具：PayPal netmstar@gmail.com | 支付宝 pkuzxx@gmail.com
+</div>
+
+</body>
+</html>

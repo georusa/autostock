@@ -1,0 +1,4 @@
+pandas>=1.0
+numpy>=1.0
+matplotlib>=3.0
+httpx>=0.20

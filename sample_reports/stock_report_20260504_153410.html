@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CEO 量化分析报告 - 2026-05-04</title>
+<style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+           background: #f5f7fa; color: #1a1a2e; }
+    .container { max-width: 1100px; margin: 0 auto; padding: 20px; }
+    .header { background: linear-gradient(135deg, #1a1a2e, #16213e, #0f3460);
+              color: white; padding: 40px; border-radius: 16px; margin-bottom: 30px;
+              text-align: center; }
+    .header h1 { font-size: 28px; margin-bottom: 8px; }
+    .header p { opacity: 0.8; font-size: 14px; }
+    .stats-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-bottom: 24px; }
+    .stat-box { background: white; border-radius: 12px; padding: 20px; text-align: center;
+                 box-shadow: 0 2px 8px rgba(0,0,0,0.06); }
+    .stat-box .value { font-size: 28px; font-weight: bold; }
+    .stat-box .label { font-size: 13px; color: #888; margin-top: 4px; }
+    .buy .value { color: #e74c3c; }
+    .sell .value { color: #27ae60; }
+    .card { background: white; border-radius: 12px; padding: 24px; margin-bottom: 24px;
+             box-shadow: 0 2px 8px rgba(0,0,0,0.06); }
+    .card h2 { font-size: 18px; margin-bottom: 16px; border-left: 4px solid #0f3460; padding-left: 12px; }
+    .stock-row { display: flex; align-items: center; padding: 12px 0; border-bottom: 1px solid #f0f0f5; }
+    .stock-row:last-child { border-bottom: none; }
+    .stock-info { flex: 1; }
+    .stock-name { font-weight: bold; font-size: 16px; }
+    .stock-price { font-size: 18px; font-weight: bold; }
+    .stock-pct { font-size: 14px; }
+    .up { color: #e74c3c; } .down { color: #27ae60; }
+    .rsi-bar { height: 6px; border-radius: 3px; margin-top: 4px; }
+    .card img { max-width: 100%; border-radius: 8px; }
+    .footer { text-align: center; color: #999; font-size: 12px; padding: 20px; }
+    .badge { display: inline-block; padding: 2px 10px; border-radius: 20px; font-size: 12px;
+              background: #e8f4fd; color: #2b6cb0; }
+</style>
+</head>
+<body>
+<div class="container">
+    <div class="header">
+        <h1>🦞 CEO A股量化分析报告</h1>
+        <p>自动生成于 2026-05-04 15:34 · 基于公开行情数据</p>
+    </div>
+    
+    <div class="stats-grid">
+        <div class="stat-box">
+            <div class="value">8</div>
+            <div class="label">📊 监测标的</div>
+        </div>
+        <div class="stat-box buy">
+            <div class="value">1</div>
+            <div class="label">🔴 RSI超卖(机会)</div>
+        </div>
+        <div class="stat-box sell">
+            <div class="value">2</div>
+            <div class="label">🟢 RSI超买(风险)</div>
+        </div>
+    </div>
+
+    <div class="card">
+        <h2>📈 行情总览</h2>
+
+        <div class="stock-row">
+            <div class="stock-info">
+                <div class="stock-name">平安银行</div>
+                <div class="stock-tag"><span class="badge">2026-04-30</span></div>
+            </div>
+            <div style="text-align:right; margin-right: 24px;">
+                <div class="stock-price">11.49</div>
+                <div class="stock-pct down">-0.26%</div>
+            </div>
+            <div style="text-align:center; width: 100px;">
+                <div style="font-weight:bold; color:#3498db;">RSI 68.2</div>
+                <div style="font-size:11px; color:#888;">正常</div>
+                <div class="rsi-bar" style="width:68.1818181818182%; background:#3498db;"></div>
+            </div>
+        </div>
+        <div class="stock-row">
+            <div class="stock-info">
+                <div class="stock-name">贵州茅台</div>
+                <div class="stock-tag"><span class="badge">2026-04-30</span></div>
+            </div>
+            <div style="text-align:right; margin-right: 24px;">
+                <div class="stock-price">1384.79</div>
+                <div class="stock-pct down">-1.17%</div>
+            </div>
+            <div style="text-align:center; width: 100px;">
+                <div style="font-weight:bold; color:#3498db;">RSI 34.9</div>
+                <div style="font-size:11px; color:#888;">正常</div>
+                <div class="rsi-bar" style="width:34.875584904010125%; background:#3498db;"></div>
+            </div>
+        </div>
+        <div class="stock-row">
+            <div class="stock-info">
+                <div class="stock-name">五粮液</div>
+                <div class="stock-tag"><span class="badge">2026-04-30</span></div>
+            </div>
+            <div style="text-align:right; margin-right: 24px;">
+                <div class="stock-price">97.08</div>
+                <div class="stock-pct down">-1.28%</div>
+            </div>
+            <div style="text-align:center; width: 100px;">
+                <div style="font-weight:bold; color:#27ae60;">RSI 22.9</div>
+                <div style="font-size:11px; color:#888;">超卖💡</div>
+                <div class="rsi-bar" style="width:22.909880564603696%; background:#27ae60;"></div>
+            </div>
+        </div>
+        <div class="stock-row">
+            <div class="stock-info">
+                <div class="stock-name">招商银行</div>
+                <div class="stock-tag"><span class="badge">2026-04-30</span></div>
+            </div>
+            <div style="text-align:right; margin-right: 24px;">
+                <div class="stock-price">38.27</div>
+                <div class="stock-pct down">-0.60%</div>
+            </div>
+            <div style="text-align:center; width: 100px;">
+                <div style="font-weight:bold; color:#3498db;">RSI 38.5</div>
+                <div style="font-size:11px; color:#888;">正常</div>
+                <div class="rsi-bar" style="width:38.48039215686273%; background:#3498db;"></div>
+            </div>
+        </div>
+        <div class="stock-row">
+            <div class="stock-info">
+                <div class="stock-name">中国平安</div>
+                <div class="stock-tag"><span class="badge">2026-04-30</span></div>
+            </div>
+            <div style="text-align:right; margin-right: 24px;">
+                <div class="stock-price">59.37</div>
+                <div class="stock-pct down">-0.10%</div>
+            </div>
+            <div style="text-align:center; width: 100px;">
+                <div style="font-weight:bold; color:#3498db;">RSI 54.0</div>
+                <div style="font-size:11px; color:#888;">正常</div>
+                <div class="rsi-bar" style="width:53.99129172714076%; background:#3498db;"></div>
+            </div>
+        </div>
+        <div class="stock-row">
+            <div class="stock-info">
+                <div class="stock-name">海康威视</div>
+                <div class="stock-tag"><span class="badge">2026-04-30</span></div>
+            </div>
+            <div style="text-align:right; margin-right: 24px;">
+                <div class="stock-price">36.29</div>
+                <div class="stock-pct up">+4.25%</div>
+            </div>
+            <div style="text-align:center; width: 100px;">
+                <div style="font-weight:bold; color:#e74c3c;">RSI 78.6</div>
+                <div style="font-size:11px; color:#888;">超买⚠️</div>
+                <div class="rsi-bar" style="width:78.62500000000009%; background:#e74c3c;"></div>
+            </div>
+        </div>
+        <div class="stock-row">
+            <div class="stock-info">
+                <div class="stock-name">美的集团</div>
+                <div class="stock-tag"><span class="badge">2026-04-30</span></div>
+            </div>
+            <div style="text-align:right; margin-right: 24px;">
+                <div class="stock-price">81.10</div>
+                <div class="stock-pct down">-0.26%</div>
+            </div>
+            <div style="text-align:center; width: 100px;">
+                <div style="font-weight:bold; color:#e74c3c;">RSI 80.7</div>
+                <div style="font-size:11px; color:#888;">超买⚠️</div>
+                <div class="rsi-bar" style="width:80.73394495412845%; background:#e74c3c;"></div>
+            </div>
+        </div>
+        <div class="stock-row">
+            <div class="stock-info">
+                <div class="stock-name">长江电力</div>
+                <div class="stock-tag"><span class="badge">2026-04-30</span></div>
+            </div>
+            <div style="text-align:right; margin-right: 24px;">
+                <div class="stock-price">27.32</div>
+                <div class="stock-pct up">+2.05%</div>
+            </div>
+            <div style="text-align:center; width: 100px;">
+                <div style="font-weight:bold; color:#3498db;">RSI 69.3</div>
+                <div style="font-size:11px; color:#888;">正常</div>
+                <div class="rsi-bar" style="width:69.32773109243699%; background:#3498db;"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="card">
+        <h2>📊 平安银行 详细分析</h2>
+        <img src="..//Users/xingxiongzhu/.openclaw/workspace/portfolio/output/平安银行_000001_SZ_chart.png" alt="平安银行 分析图" style="width:100%;">
+    </div>
+
+    <div class="card">
+        <h2>📊 贵州茅台 详细分析</h2>
+        <img src="..//Users/xingxiongzhu/.openclaw/workspace/portfolio/output/贵州茅台_600519_SH_chart.png" alt="贵州茅台 分析图" style="width:100%;">
+    </div>
+
+    <div class="card">
+        <h2>📊 五粮液 详细分析</h2>
+        <img src="..//Users/xingxiongzhu/.openclaw/workspace/portfolio/output/五粮液_000858_SZ_chart.png" alt="五粮液 分析图" style="width:100%;">
+    </div>
+
+    <div class="card">
+        <h2>📊 招商银行 详细分析</h2>
+        <img src="..//Users/xingxiongzhu/.openclaw/workspace/portfolio/output/招商银行_600036_SH_chart.png" alt="招商银行 分析图" style="width:100%;">
+    </div>
+
+    <div class="card">
+        <h2>📊 中国平安 详细分析</h2>
+        <img src="..//Users/xingxiongzhu/.openclaw/workspace/portfolio/output/中国平安_601318_SH_chart.png" alt="中国平安 分析图" style="width:100%;">
+    </div>
+
+    <div class="card">
+        <h2>📊 海康威视 详细分析</h2>
+        <img src="..//Users/xingxiongzhu/.openclaw/workspace/portfolio/output/海康威视_002415_SZ_chart.png" alt="海康威视 分析图" style="width:100%;">
+    </div>
+
+    <div class="card">
+        <h2>📊 美的集团 详细分析</h2>
+        <img src="..//Users/xingxiongzhu/.openclaw/workspace/portfolio/output/美的集团_000333_SZ_chart.png" alt="美的集团 分析图" style="width:100%;">
+    </div>
+
+    <div class="card">
+        <h2>📊 长江电力 详细分析</h2>
+        <img src="..//Users/xingxiongzhu/.openclaw/workspace/portfolio/output/长江电力_600900_SH_chart.png" alt="长江电力 分析图" style="width:100%;">
+    </div>
+
+    <div class="footer">
+        <p>🦞 由 CEO AI Agent 自动生成 · 数据来源：公开行情接口 · 不构成投资建议</p>
+        <p>2026 · 仅供学习参考</p>
+    </div>
+</div>
+</body>
+</html>
