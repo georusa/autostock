@@ -1,0 +1,34 @@
+{
+  "products": [
+    {
+      "name": "AutoStock - A股分析工具 (基础版)",
+      "price_cny": 49.9,
+      "price_usd": 6.99,
+      "description": "一键分析A股技术面，支持MACD/RSI/KDJ/布林带，自动生成专业的HTML分析报告",
+      "files": ["autostock.py", "data_harvest.py"],
+      "delivery": "GitHub Release下载"
+    },
+    {
+      "name": "AutoStock - A股分析工具 (完整版)",
+      "price_cny": 99.9,
+      "price_usd": 14.99,
+      "description": "包含基础版所有功能 + 多股对比、行业排名、趋势预警、Web仪表盘",
+      "files": ["autostock.py", "stock_analysis.py", "stock_dashboard.py", "data_harvest.py", "trend_watcher.py", "web_server.py"],
+      "delivery": "GitHub Release下载"
+    },
+    {
+      "name": "自动内容生成器 (ContentWriter)",
+      "price_cny": 39.9,
+      "price_usd": 4.99,
+      "description": "基于AI批量生成知乎/小红书风格文章，可定制风格和主题",
+      "files": ["content_writer.py", "auto_content.py"],
+      "delivery": "GitHub Release下载"
+    }
+  ],
+  "payment": {
+    "paypal": "netmstar@gmail.com",
+    "paypal_me": "georusa",
+    "alipay": "pkuzxx@gmail.com",
+    "note": "付款后，自动发送下载链接到付款邮箱"
+  }
+}
