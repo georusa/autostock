@@ -60,7 +60,7 @@ python3 autostock.py --symbol 300750 --days 120  # 宁德时代
 
 If this project helps you, consider supporting:
 
-- **PayPal**: `https://paypal.me/netmstar`
+- **PayPal**: `https://paypal.me/georusa`
 - **BTC**: (contact for address)
 
 Questions or custom development? Open an issue or reach out!
